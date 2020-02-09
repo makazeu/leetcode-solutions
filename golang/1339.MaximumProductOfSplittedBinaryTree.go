@@ -38,13 +38,13 @@ func maxProduct(root *TreeNode) int {
         diff := abs(halfSum - x)
         if diff < minDiff {
             minDiff = diff
-            ans = int((int64(x) * int64(sum - x)) % int64(MOD))
+            ans = x
         }
         if x >= halfSum {
             break
         }
     }
-    return ans
+    return int((int64(ans) * int64(sum - ans)) % int64(MOD))
 }
 
 func abs(a int) int {
